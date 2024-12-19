@@ -39,11 +39,23 @@ margin-right:3px;
 padding:5px;
 height:200px;
 border-bottom-left-radius:20px;
-border-bottom-right-radius:20px;background-color:white;
-            margin-bottom:20px !important;
-            
+border-bottom-right-radius:20px;
+background-color:white;
+            margin-bottom:20px !important; 
 
 }
+
+.sliderRaduis .swiper-slide{
+  margin-top:14px;
+  margin-left:3px;
+  margin-right:3px;
+  padding:5px;
+  height:200px;
+  border-radius:20px !important;
+  background-color:white;
+              margin-bottom:20px !important; 
+  
+  }
 
 
 

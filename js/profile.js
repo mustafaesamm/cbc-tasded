@@ -29,6 +29,7 @@ function move(id, positionPercent, color) {
   }, 270); // Delay to match animation timing
 }
 
+
 // Default bubble setup when the page loads
 document.addEventListener("DOMContentLoaded", function () {
   move('5', '10%', '#ffffff'); // Default to bubble 3

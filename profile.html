@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,135 +11,157 @@
     <script src="https://kit.fontawesome.com/000e70b561.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/style_nav.css">
 
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css'><link rel="stylesheet" href="./css/style_nav.css">
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #ffffff;
-        }
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ffffff;
+  }
+      /* الحاوية الرئيسية */
+      .container {
+    
+    max-width: 600px; /* عرض الصفحة */
+    margin: 0 auto; /* توسيط المحتوى */
+    padding: 10px;
+    overflow-y: auto;
+    height: 100vh; /* لتمكين التمرير */
+  }
 
-        header {
-            background-color: #264440;
-            color: white;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+  header {
+      background-color: #264440;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
 
-        header .title {
-            font-size: 18px;
-        }
+  header .title {
+      font-size: 18px;
+  }
 
-        header .logo {
-            width: 40px;
-            height: auto;
-        }
+  header .logo {
+      width: 40px;
+      height: auto;
+  }
 
-        .profile-header {
-            background-color: #d7dec5;
-            text-align: center;
-            padding: 15px 0;
-            font-size: 20px;
-            font-weight: bold;
-            color: #0b3824;
-            margin-bottom: 20px;
-        }
+  .profile-header {
+      background-color: #d7dec5;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 20px;
+      font-weight: bold;
+      color: #0b3824;
+      margin-bottom: 20px;
+  }
 
-        .profile-container {
-            padding: 0 20px;
-        }
+  .profile-container {
+      padding: 0 20px;
+  }
 
-        .profile-label {
-            font-size: 16px;
-            color: #6f6f6f;
-            margin-bottom: 5px;
-        }
+  .profile-label {
+      font-size: 16px;
+      color: #6f6f6f;
+      margin-bottom: 5px;
+  }
 
-        .profile-field {
-            width: 100%;
-            border: none;
-            border-bottom: 1px solid #cccccc;
-            margin-bottom: 20px;
-            font-size: 16px;
-            padding: 5px 0;
-            color: #333333;
-            background: transparent;
-        }
+  .profile-field {
+      width: 100%;
+      border: none;
+      border-bottom: 1px solid #cccccc;
+      margin-bottom: 20px;
+      font-size: 16px;
+      padding: 5px 0;
+      color: #333333;
+      background: transparent;
+  }
 
-        .profile-field:focus {
-            outline: none;
-            border-bottom: 1px solid #0b3824;
-        }
+  .profile-field:focus {
+      outline: none;
+      border-bottom: 1px solid #0b3824;
+  }
 
-        .logout-button {
-            background-color: #264440;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            cursor: pointer;
-            margin: 20px 0;
-        }
+  .logout-button {
+      background-color: #264440;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      width: 100%;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 20px 0;
+  }
 
-        .logout-button:hover {
-            background-color: #264440;
-        }
+  .logout-button:hover {
+      background-color: #264440;
+  }
 
-        .delete-account {
-            text-align: center;
-            color: #264440;
-            font-size: 14px;
-            cursor: pointer;
-        }
+  .delete-account {
+      text-align: center;
+      color: #264440;
+      font-size: 14px;
+      cursor: pointer;
+  }
 
-        .delete-account i {
-            margin-left: 5px;
-        }
-    </style>
+  .delete-account i {
+      margin-left: 5px;
+  }
+</style>
 </head>
 <body>
-  <header class="fixed-header" style="height: 80px !important;">
-    <div class="header-content " dir="ltr">
-        <div class="left-section">
-            <span class="heart-icon"><i class="fa-solid fa-heart" style="color: #F95454;margin-left:17px;font-size: 20px;"></i></span>
-        </div>
-        <div class="right-section" style="margin-top: 10px;">
-            <span class="header-text">تسديد</span>
-            <img src="./img/logo_wite-removebg-preview.png"  alt="Logo" class="logo-icon">
-        </div>
-    </div>
+ <!-- الهيدر الثابت -->
+
+
+<header class="fixed-header" style="height: 80px !important;">
+  <div class="header-content " dir="ltr">
+      <div class="left-section">
+          <span class="heart-icon"><i class="fa-solid fa-heart" style="color: #F95454;margin-left:17px;font-size: 20px;"></i></span>
+      </div>
+      <div class="right-section" style="margin-top: 10px;">
+          <span class="header-text">تسديد</span>
+          <img src="./img/logo_wite-removebg-preview.png"  alt="Logo" class="logo-icon">
+      </div>
+  </div>
 </header>
 <br><br><br>
 
-    <div class="profile-header">حسابي</div>
+  <div class="profile-header">حسابي</div>
 
-    <div class="profile-container">
-        <label class="profile-label">الاسم الكامل</label>
-        <input type="text" class="profile-field" value="">
+  <div class="profile-container">
+      <label class="profile-label">الاسم الكامل</label>
+      <input type="text" class="profile-field" value="">
 
-        <label class="profile-label">رقم الهاتف</label>
-        <input type="text" class="profile-field" value="">
+      <label class="profile-label">رقم الهاتف</label>
+      <input type="text" class="profile-field" value="">
 
-        <label class="profile-label">المحافظة</label>
-        <input type="text" class="profile-field" value="">
+      <label class="profile-label">المحافظة</label>
+      <input type="text" class="profile-field" value="">
 
-        <label class="profile-label">العنوان</label>
-        <input type="text" class="profile-field" value="">
+      <label class="profile-label">العنوان</label>
+      <input type="text" class="profile-field" value="">
 
-        <button class="logout-button">تسجيل خروج</button>
+      <button class="logout-button">تسجيل خروج</button>
 
-        <div class="delete-account">
-            <i class="fas fa-trash"></i>
-            حذف الحساب
-        </div>
-    </div>
+      <div class="delete-account">
+          <i class="fas fa-trash"></i>
+          حذف الحساب
+      </div>
+  </div>
+
+
+<div class="container">
+</div>
+
+  <script src="./js/script.js"></script>
+
+  
+
+
 </body>
-
 
 
 <div id="navbarContainer">
@@ -153,12 +174,12 @@
       <div id="bubble5" class="bubble"><span class="icon"><img width="25px" src="./img/user-icon.svg"  ></span></div>
     </div>
     <div id="menuWrapper" style="margin-top:2px;">
-      <div id="menu1"  class="menuElement" ><img onclick="navigateTo('./categories/categories.html')"  width="25px" src="./img/parts.svg" style="margin-top:2px !important;"></div>
-      <div id="menu2" class="menuElement" onclick="navigateTo('./shopping_cart.html')" ><i   class="fas fa-shopping-cart" style="font-size: 1rem; color:white;margin-right:-9px;margin-top:9px !important;position: absolute;"></i></div>
+      <div id="menu1"  class="menuElement" onclick="move('1', '90%', '#ffffff')"><img onclick="navigateTo('./categories/categories.html')"  width="25px" src="./img/parts.svg" style="margin-top:2px !important;"></div>
+      <div id="menu2" class="menuElement" onclick="navigateTo('./shopping_cart.html')" onclick="move('2', '70%', '#ffffff')"><i   class="fas fa-shopping-cart" style="font-size: 1rem; color:white;margin-right:-9px;margin-top:9px !important;position: absolute;"></i></div>
             
-      <div id="menu3" class="menuElement" onclick="navigateTo('./index.html')"  ><i  class="fas fa-home" style="color: white;"></i></div>
-      <div id="menu4" onclick="navigateTo('./invoices.html')" style="margin-left:-16px;margin-top:-8px !important;" class="menuElement" ><img  width="30px" src="./img/bars.svg"></div>
-      <div id="menu5" onclick="navigateTo('./profile.html')" class="menuElement" ><img width="25px" src="./img/user-icon.svg"  ></div>
+      <div id="menu3" class="menuElement" onclick="navigateTo('./index.html')"  onclick="move('3', '50%', '#ffffff')"><i  class="fas fa-home" style="color: white;"></i></div>
+      <div id="menu4" onclick="navigateTo('./invoices.html')" style="margin-left:-16px;margin-top:-8px !important;" class="menuElement" onclick="move('4', '30%', '#ffffff')"><img  width="30px" src="./img/bars.svg"></div>
+      <div id="menu5" onclick="navigateTo('./profile.html')" class="menuElement" onclick="move('5', '10%', '#ffffff')"><img width="25px" src="./img/user-icon.svg"  ></div>
 
             <!-- <div id="menu1" class="menuElement" onclick="navigateTo('./categories/categories.html')"><i class="fas fa-th-large" style="font-size: 1rem; color: white;"></i></div>
             <div id="menu2" class="menuElement" onclick="move('2', '70%', '#ffffff')"><i  width="25px" class="fas fa-shopping-cart" style="font-size: 1rem; color:white;margin-top:5;">
@@ -198,4 +219,5 @@
       window.location.href = page;
     }
   </script>
+  
 </html>

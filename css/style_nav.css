@@ -90,7 +90,7 @@
   left: 250px; 
   transform: translateX(-50%);
 }
-#bgBubble, #bubble1, #bubble2, #bubble3, #bubble4, #bubble5 {
+#bubble1, #bubble2, #bubble3, #bubble4, #bubble5 {
   will-change: transform, opacity;
 }
 
