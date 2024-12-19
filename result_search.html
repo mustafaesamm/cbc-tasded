@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نتائج البحث</title>
+  <link rel="stylesheet" href="./css/all_products.css">
+</head>
+<body>
+
+   <!-- الهيدر الثابت -->
+   <header class="fixed-header">
+    <div class="header-content">
+      <div class="right-section">
+        <span class="header-text">تسديد</span>
+        <img src="./img/logo_wite-removebg-preview.png" alt="Logo" class="logo-icon">
+      </div>
+    </div>
+  </header>
+
+<header class="section-header">
+  <a href="index.html" class="back-arrow">
+    <i class="fas fa-arrow-right"></i>
+  </a>
+  <h2>نتائج البحث</h2>
+</header>
+
+<section class="products">
+  <div id="loader" style="display: none; text-align: center;">جاري التحميل...</div>
+  <div class="product-grid" id="product-grid">
+    <!-- النتائج ستُضاف هنا ديناميكيًا -->
+  </div>
+</section>
+
+<script>
+// قراءة نص البحث من الرابط
+const urlParams = new URLSearchParams(window.location.search);
+const query = urlParams.get('query');
+
+// التحقق من وجود نص البحث
+if (query) {
+  document.getElementById("loader").style.display = "block"; // إظهار مؤشر التحميل
+  const apiURL = `https://89.116.110.51:3000/aqs/api/v1/filterProducts/${query}`;
+
+  fetch(apiURL)
+    .then((response) => response.json())
+    .then((data) => {
+      const productGrid = document.getElementById("product-grid");
+      productGrid.innerHTML = ""; // تفريغ الشبكة القديمة
+
+      // إخفاء مؤشر التحميل
+      document.getElementById("loader").style.display = "none";
+
+      // جلب تفاصيل المنتجات باستخدام القيم
+      data.forEach((item) => {
+        const value = item.value;
+        const detailURL = `https://89.116.110.51:3000/aqs/api/v1/getProduct/${value}`;
+
+        fetch(detailURL)
+          .then((response) => response.json())
+          .then((product) => {
+            // إنشاء بطاقة المنتج
+            const productCard = document.createElement("div");
+            productCard.className = "product-card";
+
+            // تعيين خاصية التنقل عند النقر
+            productCard.setAttribute(
+              "onclick",
+              `window.location.href='./products/sub_details.html?id=${product.id}';`
+            );
+
+            // محتوى البطاقة
+            productCard.innerHTML = `
+              <img src="${product.image}" alt="${product.title}">
+              <h3>${product.title}</h3>
+              <div class="price-separator"></div>
+              <p>د.ع ${product.price.toLocaleString()}</p>
+              <button>إضافة إلى السلة</button>
+            `;
+            productGrid.appendChild(productCard);
+          })
+          .catch((error) => console.error("Error fetching product details:", error));
+      });
+    })
+    .catch((error) => {
+      document.getElementById("loader").style.display = "none";
+      console.error("Error fetching search results:", error);
+    });
+} else {
+  alert("لا توجد نتائج بحث.");
+}
+
+</script>
+
+</body>
+</html>

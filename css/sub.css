@@ -1,0 +1,209 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+height: 130;
+}
+
+
+
+header {
+  background-color: #2d4d41;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .icon {
+  font-size: 20px;
+  cursor: pointer;
+}
+.details-header {
+  background-color: #d7dec5;
+  color: #4a4a4a;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+  border-bottom: 2px solid #e1e1e1;
+}
+.product-image {
+  text-align: center;
+  margin: 20px 0;
+}
+.product-image img {
+  max-width: 100%;
+  height: auto;
+}
+.product-details {
+  padding: 0 20px;
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+.product-details h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.product-details .highlight {
+  color: #d9534f;
+  font-weight: bold;
+}
+.separator {
+  border-top: 2px solid #ffc107;
+  margin: 10px 0;
+}
+.price-section {
+display: flex;
+justify-content: space-between;
+align-items: center;
+background-color: #f7f7f7;
+padding: 10px 20px;
+margin: 2px 0;
+
+}
+
+.price-label {
+display: flex;
+align-items: center;
+font-size: 16px;
+font-weight: bold;
+color: #4a4a4a;
+}
+
+.price-label img {
+width: 24px;
+height: 24px;
+margin-left: 10px;
+}
+
+.price-box {
+display: flex;
+align-items: center;
+background-color: #2d4d41;
+padding: 10px 20px;
+border-radius: 10px;
+width: 150px;
+}
+
+.price-box .price {
+color: white;
+font-size: 12px;
+font-weight: bold;
+margin-right: 10px;
+}
+
+.price-box .currency {
+color: white;
+font-size: 10px;
+}
+.add-to-cart {
+  margin: 0 20px 60px 20px; /* إضافة هامش سفلي */
+  bottom: 60px; /* المسافة بين الزر وأسفل الشاشة */
+  left: 10px;
+  right: 10px;
+  background-color: #ffc107;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000; /* لضمان أن الزر يظهر فوق باقي المحتوى */
+}
+
+.add-to-cart:hover {
+  background-color: #e0a800;
+}
+
+
+.counter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto 15px auto; /* إضافة هامش سفلي لتوفير مساحة بين العداد وزر "إضافة إلى السلة" */
+  background-color: #2d4d41;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.counter button {
+  background-color: #2d4d41;
+  border: none;
+  color: white;
+  font-size: 14px; /* حجم نص أصغر */
+  font-weight: bold;
+  padding: 8px 15px; /* تصغير الأزرار */
+  cursor: pointer;
+}
+
+.counter #count {
+  font-size: 16px; /* حجم نص متوسط */
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  padding: 5px 10px;
+  background-color: #2d4d41;
+}
+
+.counter span {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 10px;
+}
+
+/* ======== Header ======== */
+.product-header {
+  margin-top: 44px;
+  background-color: #9daf9b; /* لون الخلفية */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  position: fixed; /* جعل الهيدر ثابتًا */
+  top: 0; /* وضعه في أعلى الصفحة */
+  width: 90%; /* تغطية عرض الشاشة بالكامل */
+  z-index: 1000; /* ضمان الظهور فوق باقي العناصر */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* إضافة ظل */
+}
+
+.product-header .title {
+  flex-grow: 1; /* أخذ المساحة المتبقية */
+  text-align: center;
+  color: white;
+}
+
+.product-header .icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.product-header .icon:hover {
+  opacity: 0.8;
+}
+
+.product-header .back-icon {
+  color: white; 
+}
+
+.product-header .right-icons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.product-header .favorite-icon {
+  color: red;
+}
+
+.product-header .share-icon {
+  color: white;
+}

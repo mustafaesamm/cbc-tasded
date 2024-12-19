@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Optimized Animation</title>
+  <style>
+    /* General styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      overflow: hidden;
+    }
+
+    #navbarContainer {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #333;
+    }
+
+    #navbar {
+      position: relative;
+      width: 90%;
+      height: 100px;
+      background-color: #444;
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+    }
+
+    #bubbleWrapper {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .bubble {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      background-color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translateY(160%);
+      opacity: 0;
+      box-shadow: none;
+      transition: transform 0.15s ease-out, opacity 0.15s ease-out, box-shadow 0.15s ease-out;
+    }
+
+    .bubble span {
+      transform: translateY(50%);
+      opacity: 0;
+      transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+    }
+
+    .bubble.active {
+      transform: translateY(0);
+      opacity: 1;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    }
+
+    .bubble.active span {
+      transform: translateY(0);
+      opacity: 0.7;
+    }
+
+    #bgWrapper {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+
+    #bgBubble {
+      position: absolute;
+      bottom: -50px;
+      left: 50%;
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      border-radius: 50%;
+      transform: translateX(-50%) translate3d(0, 0, 0);
+      transition: left 0.5s ease-in-out, bottom 0.15s ease-out;
+    }
+
+    .menuElement {
+      cursor: pointer;
+      color: white;
+    }
+
+    .menuElement i {
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="navbarContainer"> 
+    <div id="navbar">
+      <div id="bubbleWrapper">
+        <div id="bubble1" class="bubble"><span class="icon"><i class="fas fa-th-large"></i></span></div>
+        <div id="bubble2" class="bubble"><span class="icon"><i class="fas fa-shopping-cart"></i></span></div>
+        <div id="bubble3" class="bubble"><span class="icon"><i class="fas fa-home"></i></span></div>
+        <div id="bubble4" class="bubble"><span class="icon"><i class="fas fa-file-invoice-dollar"></i></span></div>
+        <div id="bubble5" class="bubble"><span class="icon"><i class="fas fa-user"></i></span></div>
+      </div>
+      <div id="menuWrapper">
+        <div id="menu1" class="menuElement" data-id="1" data-position="90%"><i class="fas fa-th-large"></i></div>
+        <div id="menu2" class="menuElement" data-id="2" data-position="70%"><i class="fas fa-shopping-cart"></i></div>
+        <div id="menu3" class="menuElement" data-id="3" data-position="50%"><i class="fas fa-home"></i></div>
+        <div id="menu4" class="menuElement" data-id="4" data-position="30%"><i class="fas fa-file-invoice-dollar"></i></div>
+        <div id="menu5" class="menuElement" data-id="5" data-position="10%"><i class="fas fa-user"></i></div>
+      </div>    
+    </div>
+    <div id="bgWrapper">
+      <div id="bg"></div>
+      <div id="bgBubble"></div>
+    </div>
+  </div>
+
+  <script>
+    function move(id, positionPercent, color) {
+      // Reset all bubbles
+      document.querySelectorAll(".bubble").forEach((bubble) => {
+        bubble.classList.remove("active");
+      });
+
+      // Activate the selected bubble
+      const activeBubble = document.getElementById(`bubble${id}`);
+      activeBubble.classList.add("active");
+
+      // Move the background bubble
+      const bgBubble = document.getElementById("bgBubble");
+      bgBubble.style.left = positionPercent;
+    }
+
+    // Default bubble setup when the page loads
+    document.addEventListener("DOMContentLoaded", function () {
+      move("3", "50%", "#ffffff"); // Default to bubble 3
+    });
+
+    // Handling menu clicks dynamically
+    document.querySelectorAll(".menuElement").forEach((menu) => {
+      menu.addEventListener("click", function () {
+        const id = this.dataset.id; // Get bubble ID dynamically
+        const position = this.dataset.position; // Get position dynamically
+        move(id, position, "#ffffff"); // Call move with the correct parameters
+      });
+    });
+  </script>
+
+  <!-- Font Awesome CDN -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

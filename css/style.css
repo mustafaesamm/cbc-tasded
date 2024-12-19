@@ -1,0 +1,823 @@
+@font-face {
+  font-family: 'MyCustomFont'; /* Give the font a name */
+  src: url('../fonts/tajwal.ttf') format('truetype'); /* Path to the .ttf file */
+  font-weight: normal; /* Optional: Define the font weight */
+  font-style: normal;  /* Optional: Define the font style */
+}
+
+body {
+  font-family: 'MyCustomFont', sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: #f9f9f9;
+  direction: rtl;
+  text-align: right;
+}
+
+
+h2 {
+  margin: 20px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+/* تعديلات مصطفى */
+
+.slider{
+  padding-top:40px
+}
+.slider img{
+  object-fit:cover;
+  height:150px;
+ 
+}
+.slider .swiper-slide{
+margin-top:14px;
+margin-left:3px;
+margin-right:3px;
+padding:5px;
+height:200px;
+border-bottom-left-radius:20px;
+border-bottom-right-radius:20px;background-color:white;
+            margin-bottom:20px !important;
+            
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ================== الهيدر ================== */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* يغطي العرض بالكامل */
+  background-color: #264440;
+  color: white;
+  height: 290px; /* ارتفاع مناسب للهيدر */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px; /* تباعد داخلي للجانبين */
+  z-index: 1000; /* فوق جميع العناصر */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* ظل خفيف */
+}
+
+.fixed-header .header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%; /* يغطي العرض بالكامل */
+}
+
+.fixed-header .left-section,
+.fixed-header .right-section {
+  display: flex;
+  align-items: center;
+}
+
+.fixed-header .right-section {
+  margin-right: 10px; 
+  gap: 10px;
+}
+
+.fixed-header .right-section img {
+  margin-left: 8px; 
+  gap: 10px;
+}
+
+
+.fixed-header .heart-icon {
+  font-size: 24px;
+  
+}
+
+.fixed-header .logo-icon {
+  width: 50px;
+  height: 50px;
+  /* margin-right: 2px; */
+}
+
+.fixed-header .header-text {
+  font-size: 10px;
+  font-weight: bold;
+  /* margin-right: 10px; */
+}
+
+
+
+
+/* ================== السلايدر ================== */
+.slider-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  background-color: #f9f9f9;
+  width: 100%; /* اجعل عرض الحاوية 100% */
+  overflow: hidden; /* منع ظهور الحواف */
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 0; /* إزالة المسافات بين الصور */
+  padding: 0; /* إزالة الحواف الداخلية */
+  width: 100%; /* عرض السلايدر 100% */
+  direction: rtl; /* عكس اتجاه السلايدر */
+}
+
+.slider::-webkit-scrollbar {
+  display: none; /* إخفاء شريط التمرير */
+}
+
+.slide {
+  flex: 0 0 100%; /* عرض كل شريحة يساوي عرض الشاشة */
+  scroll-snap-align: center;
+  width: 100%; /* عرض الشريحة بالكامل */
+  aspect-ratio: 3 / 2; /* الحفاظ على نسبة العرض إلى الارتفاع */
+  overflow: hidden;
+  text-align: center;
+}
+
+.slide img {
+  width: 100%; /* اجعل الصورة تملأ العرض بالكامل */
+  height: 100%;
+  object-fit: cover; /* ملاءمة الصورة للحاوية */
+}
+
+
+
+.custom-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* padding: 10px 20px; */
+  margin: 20px auto; /* تمركز الحاوية */
+  max-width: 90%; /* تصغير العرض */
+  width: 390px; /* عرض ثابت للشاشات الصغيرة */
+}
+
+.custom-container .option {
+  flex: 1; /* توزيع العناصر بالتساوي */
+  text-align: center;
+  font-size: 14px; /* تصغير النص قليلاً */
+  font-weight: bold;
+  color: #333;
+  border-right: 1px solid #ddd; /* خط فاصل بين العناصر */
+}
+
+.custom-container .option:last-child {
+  border-right: none; /* إزالة الخط الفاصل من العنصر الأخير */
+}
+
+.custom-container .option span {
+  display: block;
+  padding: 10px;
+  color: #254e45; /* لون النص */
+}
+
+
+
+
+/* ================== السلايدر ================== */
+.slider-wrapper2 {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px; /* تقليل المسافة العلوية */
+}
+
+.slider2 {
+
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+  padding: 0; /* إزالة الحواف */
+  width: 90%; /* تقليل عرض السلايدر */
+  max-width: 500px; /* تحديد أقصى عرض */
+  direction: rtl; /* عكس اتجاه السلايدر */
+}
+
+.slider2::-webkit-scrollbar {
+  display: none; /* إخفاء شريط التمرير */
+}
+
+.slide2 {
+  margin-top: 100px;
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  width: 100%; /* عرض السلايدر بالكامل */
+  aspect-ratio: 4 / 3; /* نسبة العرض إلى الارتفاع */
+  overflow: hidden;
+  border-radius: 8px; /* إضافة حواف مستديرة للصورة */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* ظل خفيف للصورة */
+}
+
+.slide2 img {
+
+  width: 100%;
+  height: 100%;
+  /* object-fit: contain;  */
+}
+
+
+/* ================== البحث ================== */
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 80%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 10px 15px;
+  border: 1px solid #666; /* لون الحدود */
+  border-radius: 25px;
+  background-color: #fff;
+  gap: 10px;
+  box-shadow: none; /* إزالة الظلال */
+}
+
+.search-container input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  color: #333;
+  background: none;
+  padding: 5px 10px;
+  text-align: right; /* النص يبدأ من الجهة اليمنى */
+}
+
+.search-container input::placeholder {
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.search-container button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* تصميم الأيقونة */
+.search-icon {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"%3E%3Cpath stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 4a6 6 0 110 12 6 6 0 010-12zm0 0l8 8" /%3E%3C/svg%3E') no-repeat center;
+  background-size: contain;
+  color: #666; /* لون مطابق للصورة */
+}
+
+.search-container button:hover .search-icon {
+  color: #333; /* تغيير اللون عند التمرير */
+}
+
+
+
+
+
+
+/* ================== الأقسام ================== */
+.categories {
+  margin-top: 20px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column; /* ترتيب العناصر عموديًا */
+  align-items: center; /* توسيط العناصر أفقيًا */
+  text-align: center; /* محاذاة النص في المنتصف */
+}
+
+.categories h2 {
+  font-size: 1.4rem; /* تكبير حجم عنوان القسم */
+  color: #333;
+  margin-bottom: 20px;
+  text-align: right; /* محاذاة النص الرئيسي لليمين */
+  margin-right: 15px;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); /* تكبير حجم الأعمدة */
+  gap: 10px; /* زيادة المسافة بين العناصر */
+  justify-items: center; /* توسيط العناصر داخل الشبكة */
+}
+
+.icon-box {
+  width: 70px; /* تكبير عرض الأيقونات */
+  height: 70px; /* تكبير ارتفاع الأيقونات */
+  display: flex; /* جعل الحاوية مرنة */
+  justify-content: center; /* توسيط المحتوى أفقيًا */
+  align-items: center; /* توسيط المحتوى عموديًا */
+  overflow: hidden; /* التأكد من عدم تجاوز الصورة للحاوية */
+  background-color: #f5f5f5; /* خلفية خفيفة للأيقونات */
+  border-radius: 10px; /* جعل الحواف مستديرة قليلاً */
+}
+
+.icon-box img {
+  width: 100%; /* تناسب الصورة مع الحاوية */
+  height: 100%;
+  object-fit: contain; /* التأكد من تناسب الصورة بدون قص */
+}
+
+.category p {
+  margin: 5px 0; /* إضافة مسافة صغيرة أعلى وأسفل النص */
+  font-size: 1rem; /* تكبير حجم النص */
+  font-weight: bold; /* زيادة سماكة النص */
+  color: #333; /* لون غامق للنص */
+  text-align: center; /* توسيط النص */
+}
+
+
+
+
+
+/* ================== السلايدر ================== */
+#image-slider {
+  display: flex;
+  overflow-x: auto; 
+  scroll-snap-type: x mandatory; 
+  gap: 10px;
+  width: 100%;
+  margin: 20px 0; 
+}
+
+#image-slider .slide {
+  flex: 0 0 auto; 
+  scroll-snap-align: center;
+  width: 100%;
+  height: 200px; 
+  border-radius: 10px; 
+  overflow: hidden;
+}
+
+#image-slider .slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+
+
+
+
+/* ================== المنتجات ================== */
+.products {
+  background-color: #fff;
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 100%; /* اجعل العرض 100% للشاشة */
+  text-align: left;
+  overflow-x: auto; /* السماح بالتمرير الأفقي */
+  white-space: nowrap; /* منع العناصر من النزول للأسفل */
+  position: relative; /* لجعل عناصر داخلها تستخدم position: absolute */
+}
+
+.product-grid {
+  display: inline-flex; /* ترتيب الكروت بشكل أفقي */
+  gap: 20px; 
+  padding-bottom: 30px; /* مسافة أسفل الصف */
+}
+
+.product-card {
+  background-color: #f1f1f1;
+  border: 1px solid #ccc;
+  padding: 10px; /* حشو داخلي مريح */
+  border-radius: 5px; /* انحناء بسيط */
+  text-align: center;
+  width: 200px; /* عرض الكارت */
+  height: auto; /* ارتفاع الكارت يتكيف حسب المحتوى */
+  flex-shrink: 0; /* منع الكارت من التصغير عند التمرير */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* ظل ناعم */
+  position: relative;
+}
+
+.product-card img {
+  width: 100%;
+  height: 120px; /* ارتفاع للصورة */
+  object-fit: cover; /* اقتصاص الصورة لتناسب الحجم */
+  border-radius: 3px; /* انحناء للصورة */
+  margin-bottom: 10px; /* مسافة بين الصورة والمحتوى */
+}
+
+.product-card h3 {
+  font-size: 0.9rem; /* حجم نص مناسب */
+  margin: 5px 0; /* مسافة أعلى وأسفل */
+  color: #333;
+}
+
+.product-card p {
+  font-size: 0.8rem; /* حجم النص */
+  color: #555;
+  margin: 5px 0; /* مسافة بين النصوص */
+}
+
+.price-separator {
+  width: 100%; 
+  height: 2px; /* سماكة الفاصل */
+  background-color: #f5cb53;
+  margin: 1px 0; /* مسافة قبل وبعد الفاصل */
+}
+
+.product-card button {
+  background-color: #f5cb53;
+  color: #000;
+  border: none;
+  padding: 10px 0; /* حجم زر مريح */
+  width: 100%; /* جعل الزر يمتد على عرض الكارت بالكامل */
+  border-radius: 10px; /* انحناء بسيط للزر */
+  font-size: 0.8rem; /* حجم النص داخل الزر */
+  font-weight: bold;
+  cursor: pointer; /* مؤشر اليد عند التمرير فوق الزر */
+}
+
+.product-card button:hover {
+  background-color: #f5cb53;
+}
+
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  position: sticky;
+  /* margin-right: 30px; */
+}
+
+.section-header h2 {
+  font-size: 1rem; /* حجم النص */
+  margin: 0; /* إزالة الهوامش الافتراضية */
+  margin-right: 20px; /* إضافة مسافة يمين */
+  position: sticky;
+  color: #264440;
+}
+
+/* تخصيص لون النص */
+.text-custom {
+  color: #264440;
+}
+
+/* تخصيص الرابط */
+.link-custom {
+  color: #264440; /* نفس اللون */
+  text-decoration: none; /* إزالة الخط السفلي */
+}
+
+.link-custom:hover {
+  text-decoration: none; /* منع ظهور الخط السفلي عند التمرير */
+  color: #1a3333; /* اختيار لون أغمق عند التمرير (اختياري) */
+}
+
+
+.section-header .view-all:hover {
+  text-decoration: underline; /* إضافة تسطير عند التمرير */
+}
+
+
+.product-grid {
+  display: inline-flex; /* ترتيب الكروت بشكل أفقي */
+  gap: 20px;
+  padding-bottom: 30px; /* مسافة أسفل الصف */
+}
+
+/* تخصيص لون زر البحث */
+.custom-search-button {
+  background-color: #264440 !important; /* اللون الأساسي */
+  border-color: #264440 !important; /* لون الحدود */
+}
+
+.custom-search-button:hover {
+  background-color: #1e3633 !important; /* لون عند التمرير */
+  border-color: #1e3633 !important; /* لون الحدود عند التمرير */
+}
+
+/* تخصيص لون النص */
+.text-custom {
+  color: #264440;
+}
+
+
+
+/* .slider-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  background-color: #f9f9f9;
+  overflow-x: auto;
+}
+
+.slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 10px;
+  padding: 10px;
+  width: 150%;
+  max-width: 600px;
+
+}
+
+.slide {
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+  width: calc(100% - 20px);
+  max-width: 100%;
+  aspect-ratio: 3 / 2;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+
+
+
+
+/* ================== الأزرار ================== */
+button {
+  background-color: #f5cb53;
+  color: rgb(0, 0, 0);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+/* ================== استجابة (Responsive) ================== */
+@media (max-width: 768px) {
+
+  .fixed-header {
+    height: 50px; /* تقليل الارتفاع على الشاشات الصغيرة */
+    padding: 0 10px; /* تقليل التباعد الداخلي */
+  }
+
+  .fixed-header .header-text {
+    font-size: 16px; /* تصغير النص */
+  }
+
+  .fixed-header .logo-icon {
+    width: 50px; /* تصغير عرض الشعار */
+    height: 50px;
+  }
+
+
+  /* المنتج */
+  .product-card {
+    max-width: 200px;
+    padding: 10px;
+  }
+
+  .product-card img {
+    height: 120px;
+  }
+
+  .product-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .product-card p {
+    font-size: 0.85rem;
+  }
+
+  .product-card button {
+    font-size: 0.9rem;
+    padding: 8px 0;
+  }
+
+  /* البحث */
+  .search-container {
+    flex-direction: row;
+    width: 90%;
+    padding: 8px 12px;
+    gap: 5px;
+  }
+
+  .search-container input {
+    font-size: 0.9rem;
+    padding: 4px 6px;
+  }
+
+  .search-container button {
+    font-size: 1rem;
+    margin-left: 3px;
+  }
+}
+
+
+
+
+
+@media (max-width: 480px) {
+  /* النصوص العامة */
+  /* body {
+    font-size: 0.5rem;
+  } */
+
+  /* الهيدر */
+  .fixed-header {
+    height: 45px; /* تقليل الارتفاع أكثر */
+    padding: 0 8px;
+  }
+
+  .fixed-header .header-text {
+    font-size: 16px;
+  }
+
+  .fixed-header .logo-icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* البحث */
+  .search-container {
+    width: 90%;
+    padding: 6px 8px;
+    gap: 3px;
+    border-radius: 10px;
+  }
+
+  .search-container input {
+    font-size: 0.8rem;
+    padding: 5px 5px;
+  }
+
+  .search-container button {
+    font-size: 0.9rem;
+    margin-left: 2px;
+  }
+
+  /* الأقسام */
+  .categories {
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .categories h2 {
+    font-size: 0.9rem;
+    /* margin-bottom: 10px; */
+    color: #264440;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(5, 1fr);
+    /* gap: 1px; */
+  }
+
+  .icon-box {
+    width: 70px;
+    height: 70px;
+  }
+
+  .category p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  /* المنتج */
+  .product-card {
+    max-width: 150px;
+    padding: 8px;
+    margin: 5px;
+  }
+
+  .product-card img {
+    height: 100px;
+  }
+
+  .product-card h3 {
+    font-size: 0.5rem;
+    margin: 5px 0;
+  }
+
+  .product-card p {
+    font-size: 0.75rem;
+  }
+
+  .product-card button {
+    font-size: 0.8rem;
+    padding: 5px 0;
+  }
+
+  /* السلايدر */
+  #image-slider {
+    gap: 5px;
+  }
+
+  #image-slider .slide {
+    height: 150px;
+  }
+
+  /* الشريط السفلي */
+  .bottom-nav {
+    height: 50px;
+  }
+
+  .nav-item i {
+    font-size: 18px;
+  }
+
+  .nav-item span {
+    font-size: 10px;
+  }
+}
+
+
+
+@media (max-width: 429px) {
+
+  .section-header .view-all {
+    margin-left: 10px;
+  }
+  
+  /* الأقسام */
+  .categories h2 {
+    font-size: 0.9rem;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(5, 1fr);
+    /* gap: 8px; */
+  }
+
+  .category p {
+    font-size: 0.7rem;
+  }
+
+  /* المنتج */
+  .product-card {
+    width: 140px;
+    margin: 5px;
+  }
+
+  .product-card img {
+    height: 80px;
+  }
+
+  .product-card h3 {
+    font-size: 0.5rem;
+    margin: 5px 0;
+  }
+
+  .product-card p {
+    font-size: 0.6rem;
+  }
+
+  .product-card button {
+    font-size: 0.7rem;
+    padding: 5px 0;
+  }
+
+  .bottom-nav {
+    height: 50px;
+  }
+
+  .nav-item i {
+    font-size: 18px;
+  }
+
+  .nav-item span {
+    font-size: 10px;
+  }
+}
+
+

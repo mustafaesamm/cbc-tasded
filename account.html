@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- <link rel="stylesheet" href="./css/bottom_nav.css"> -->
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+/>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center; /* لتوسيط الحاوية أفقيًا */
+            align-items: center; /* لتوسيط الحاوية رأسيًا */
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+            width: 120px;
+            height: auto;
+        }
+
+        .title {
+            font-size: 24px;
+            color: #0b3824;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center; /* توسيط جميع العناصر */
+            justify-content: center; /* توسيط رأسي للعناصر */
+        }
+
+        .form-container input {
+            width: 100%;
+            max-width: 90%;
+            padding: 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            background-color: #0b3824;
+            color: #ffffff;
+            text-align: center; /* توسيط النصوص داخل الحقول */
+        }
+
+        .form-container input::placeholder {
+            color: #c4c4c4;
+        }
+
+        .login-button {
+            width: 100%;
+            max-width: 90%;
+            padding: 15px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #ffc107;
+            color: #0b3824;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .login-button:hover {
+            background-color: #e0a800;
+        }
+
+        .error-message {
+            font-size: 14px;
+            color: red;
+            text-align: center;
+        }
+
+        .signup-section {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #6f6f6f;
+        }
+
+        .signup-section a {
+            color: #ffc107;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup-section a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+  <!-- الهيدر الثابت -->
+  <header class="fixed-header">
+    <div class="header-content">
+        <!-- <div class="left-section">
+            <span class="heart-icon">❤️</span>
+        </div> -->
+        <div class="right-section">
+            <span class="header-text">تسديد</span>
+            <img src="./img/logo_wite-removebg-preview.png" alt="Logo" class="logo-icon">
+        </div>
+    </div>
+</header>
+
+    <img src="./img/logo_wite-removebg-preview.png" alt="Logo" class="logo">
+    <h1 class="title">تسديد</h1>
+
+    <div class="form-container">
+        <input type="text" placeholder="رقم الهاتف">
+        <input type="password" placeholder="كلمة السر">
+        <button class="login-button" onclick="window.location.href='index.html'">تسجيل دخول</button>
+
+        <p class="error-message">رقم الهاتف أو كلمة المرور غير صحيحة</p>
+    </div>
+
+    <div class="signup-section">
+        <p>لا تمتلك حساب؟ <a href="#">قم بإنشاء حساب</a></p>
+        <p><a href="#">الاستمرار بدون تسجيل</a></p>
+    </div>
+</body>
+</html>

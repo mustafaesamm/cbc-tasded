@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسديد</title>
+    <!-- إضافة Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/000e70b561.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style_nav.css">
+</head>
+
+<body>
+  <header class="fixed-header" style="height: 80px !important;">
+    <div class="header-content " dir="ltr">
+        <div class="left-section">
+            <span class="heart-icon"><i class="fa-solid fa-heart" style="color: #F95454;margin-left:17px;font-size: 20px;"></i></span>
+        </div>
+        <div class="right-section" style="margin-top: 10px;">
+            <span class="header-text">تسديد</span>
+            <img src="./img/logo_wite-removebg-preview.png"  alt="Logo" class="logo-icon">
+        </div>
+    </div>
+</header>
+    <!-- الهيدر الثابت -->
+  <!-- سلايدر الإعلانات -->
+  <div class="slider-wrapper" >
+    <div class="slider ad-slider" id="ad-slider" style="height: 220px;">
+    </div>
+  </div>
+<div class=" w-full d-flex justify-content-center  " style="margin-bottom:29px !important;font-weight: bold;justify-content: center;height: 40px;align-items: center !important;margin-top:10px !important;border-radius: 10px;box-shadow: 
+0 -0.1px 2px rgba(0, 0, 0, 0.1), /* Top shadow */
+0 1px 3px rgba(0, 0, 0, 0.2);   /* Bottom shadow */
+transition: box-shadow 0.3s ease;">
+  <div class="d-flex  justify-content-between mx-4" style="width:300px;">
+  <span>تمكين الشراء الشهري</span>
+  <span>IQD 0</span>
+</div>
+</div>
+<!-- البحث -->
+<div class="search-container">
+  <button id="search-button">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" width="20" height="20">
+      <circle cx="11" cy="11" r="7" stroke-width="1"></circle>
+      <line x1="16" y1="16" x2="22" y2="22" stroke-width="2"></line>
+    </svg>
+  </button>
+  <input type="text" id="search-input" placeholder="ما الذي تبحث عنه؟">
+</div>
+
+    <!-- الأقسام -->
+    <section class="container">
+      <h2 class="fw-bold mb-3 text-custom" style="color:#4e7772 !important;margin-right: 10px;">تسوق من الأكثر رواجاً</h2>
+      <div class="row row-cols-5 row-cols-md-4 g-1" id="categories-container">
+          <!-- ستُضاف الأقسام ديناميكيًا هنا -->
+      </div>
+  </section>
+  <div class="slider-wrapper" style="margin-top: -5px !important;">
+    <div class="slider ad-slider" id="ad-slider2" style="height: 160px;">
+    </div>
+  </div>
+<!-- منتجات مضافة حديثاً -->
+<div class="container my-5 " id="last">
+  <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2 class="fw-bold text-custom" >مضافة حديثآ</h2>
+      <a href="./products/all_products.html" class="btn btn-link link-custom ">عرض الكل </a>
+  </div>
+  <div class="overflow-auto">
+      <div class="d-flex flex-nowrap gap-3" id="product-grid">
+      </div>
+  </div>
+</div>
+    <!-- اكثر طلباً -->
+    <div class="container my-5 " id="last">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="fw-bold text-custom" >الاكثر طلبا</h2>
+          <a href="./products/all_products.html" class="btn btn-link link-custom ">عرض الكل </a>
+      </div>
+      <div class="overflow-auto">
+          <div class="d-flex flex-nowrap gap-3" id="product-grid2">
+          </div>
+      </div>
+    </div>
+
+
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+
+    <div id="navbarContainer">
+      <div id="navbar">
+        <div id="bubbleWrapper" style="margin-top:18px !important;">
+          <div id="bubble1" class="bubble"><span class="icon"><img width="25px" src="./img/parts.svg"></span></div>
+          <div id="bubble2" class="bubble" ><span class="icon" ><i   class="fas fa-shopping-cart"></i></span></div>
+          <div id="bubble3" class="bubble"><span class="icon"><i class="fas fa-home"></i></span><p class=""></p></div>
+          <div id="bubble4" class="bubble"><span class="icon"><img width="25px" src="./img/bars.svg"  ></span></div>
+          <div id="bubble5" class="bubble"><span class="icon"><img width="25px" src="./img/user-icon.svg"  ></span></div>
+        </div>
+        <div id="menuWrapper" style="margin-top:2px;">
+          <div id="menu1"  class="menuElement" ><img onclick="navigateTo('./categories/categories.html')"  width="25px" src="./img/parts.svg" style="margin-top:2px !important;"></div>
+          <div id="menu2" class="menuElement" onclick="navigateTo('./shopping_cart.html')" ><i   class="fas fa-shopping-cart" style="font-size: 1rem; color:white;margin-right:-9px;margin-top:9px !important;position: absolute;"></i></div>
+                
+          <div id="menu3" class="menuElement" onclick="navigateTo('./index.html')"  ><i  class="fas fa-home" style="color: white;"></i></div>
+          <div id="menu4" onclick="navigateTo('./invoices.html')" style="margin-left:-16px;margin-top:-8px !important;" class="menuElement" ><img  width="30px" src="./img/bars.svg"></div>
+          <div id="menu5" onclick="navigateTo('./profile.html')" class="menuElement" ><img width="25px" src="./img/user-icon.svg"  ></div>
+
+                <!-- <div id="menu1" class="menuElement" onclick="navigateTo('./categories/categories.html')"><i class="fas fa-th-large" style="font-size: 1rem; color: white;"></i></div>
+                <div id="menu2" class="menuElement" onclick="move('2', '70%', '#ffffff')"><i  width="25px" class="fas fa-shopping-cart" style="font-size: 1rem; color:white;margin-top:5;">
+                <div id="menu3" class="menuElement" onclick="move('3', '50%', '#ffffff')"><i width="25px" class="fas fa-home" style="font-size: 1rem; color: white;"></i></div>
+                <div id="menu4" class="menuElement" onclick="move('4', '30%', '#ffffff')"><img  width="25px" src="./img/bars.svg"></div>
+                <div id="menu5" class="menuElement" onclick="move('5', '10%', '#ffffff')"><img width="25px" src="./img/user-icon.svg"  ></div> -->
+        </div>
+        <div class="d-flex bg-red w-full" style="margin-bottom: 0px !important;margin-top: 62px;justify-content:space-around;color: white !important;font-size: 10px;">
+          <p>الاقسام</p> 
+          <p>السلة</p>
+          <p>الرئيسية</p>
+          <p>الفواتير</p>
+          <p>الحساب</p>
+        </div>
+      </div>
+
+      <div id="bgWrapper">
+        <div id="bg"></div>
+        <div id="bgBubble"></div>
+      </div>
+      
+    </div>
+
+    <svg width="0" height="0" >
+      <defs>
+        <filter id="goo">
+          <feGaussianBlur in="" stdDeviation="20" result="" id=""/>
+          <feColorMatrix  mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -10" result="" />
+        </filter>
+      </defs>
+    </svg>
+</body>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script>
+  <script  src="./js/script_nav.js"></script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+  const menuElements = document.querySelectorAll(".menuElement");
+  let activeMenu = null;
+
+  menuElements.forEach((menuElement) => {
+    menuElement.addEventListener("click", function () {
+      const icon = this.querySelector("i");
+
+      // If the clicked button's icon is already hidden, do nothing
+      if (this === activeMenu) return;
+
+      // Show the previously hidden icon, if any
+      if (activeMenu) {
+        const previousIcon = activeMenu.querySelector("i");
+        previousIcon.style.cssText = "display: block !important;color:white";
+      }
+
+      // Hide the clicked button's icon
+      icon.style.cssText = "display: none !important;color:white";
+      activeMenu = this; // Set the current button as active
+    });
+  });
+});
+
+  document.getElementById("search-button").addEventListener("click", function () {
+    const searchInput = document.getElementById("search-input").value.trim();
+  
+    if (searchInput) {
+      // طلب البحث من API
+      const searchURL = `https://89.116.110.51:3000/aqs/api/v1/filterProducts/${searchInput}`;
+  
+      fetch(searchURL)
+        .then((response) => response.json())
+        .then((data) => {
+          // عرض النتائج
+          displaySearchResults(data);
+        })
+        .catch((error) => {
+          console.error("Error fetching search results:", error);
+        });
+    } else {
+      alert("يرجى إدخال كلمة للبحث!");
+    }
+  });
+  
+  // عرض نتائج البحث
+ 
+  </script>
+  
+  
+  
+    
+    <script>  
+    function navigateTo(page) {
+      window.location.href = page;
+    }
+      async function fetchCategories() {
+        try {
+          const response = await fetch('https://89.116.110.51:3000/aqs/api/v1/getCategories');
+          const categories = await response.json();
+          // تحقق من نجاح الاستجابة وتأكد من أن البيانات مصفوفة
+          if (Array.isArray(categories)) {
+            const container = document.getElementById('categories-container');
+            container.innerHTML = ''; // تفريغ المحتوى الافتراضي
+    
+            // إنشاء أقسام ديناميكيًا
+            let countCategories=0
+            categories.forEach(category => {
+             
+              // التأكد من أن القسم نشط
+              if (category.active === 1) {
+                countCategories +=1
+                console.log(countCategories + '&  name='+category.title)
+                if(countCategories < 10){
+                const categoryElement = document.createElement('div');
+                categoryElement.className = 'category';
+                categoryElement.innerHTML = `
+                  <div class="icon-box">
+                    <a href="./categories/cook.html?id=${category.id}">
+                      <img src="${category.image}" alt="${category.title}" style="cursor: pointer;">
+                    </a>
+                  </div>
+                  <p>${category.title}</p>
+                `;
+                container.appendChild(categoryElement);
+              }
+            }
+              
+            });
+            const categoryElement = document.createElement('div');
+                categoryElement.className = 'category';
+                categoryElement.innerHTML = `
+                  <div class="icon-box" >
+                    <a href="./categories/cook.html?id={category.id}">
+                      <img  src="./img/shapes.svg" alt="{category.title}" style="cursor: pointer;">
+                    </a>
+                  </div>
+                  <p>الاقسام</p>
+                `;
+                container.appendChild(categoryElement);
+          } else {
+            console.error('Unexpected data format:', categories);
+          }
+        } catch (error) {
+          console.error('Error fetching categories:', error);
+        }
+      }
+    
+      // استدعاء الدالة عند تحميل الصفحة
+      document.addEventListener('DOMContentLoaded', fetchCategories);
+  
+  
+  
+      async function fetchProducts() {
+    try {
+      const response = await fetch('https://89.116.110.51:3000/aqs/api/v1/getProductsRecently');
+      const products = await response.json();
+      const productGrid =  document.getElementById("product-grid");
+      productGrid.innerHTML = ''; // تفريغ المحتوى الافتراضي
+  
+      products.forEach((product) => {
+  const productCard = `
+    <div class="product-card">
+      <img onclick="window.location.href='./products/sub_details.html?id=${product.id}';" src="${product.image}" alt="${product.title}">
+      <h3 onclick="window.location.href='./products/sub_details.html?id=${product.id}';">${product.title}</h3>
+      <div class="price-separator"></div>
+      <p>د.ع ${product.price.toLocaleString()}</p>
+      <button onclick='addToCart(${JSON.stringify(product)});'>إضافة إلى السلة</button>
+    </div>
+  `;
+  productGrid.innerHTML += productCard;
+});
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    }
+  }
+  
+  
+  async function fetchProducts2() {
+    try {
+      const response = await fetch('https://89.116.110.51:3000/aqs/api/v1/getProductsRecently');
+      const products = await response.json();
+  
+      const productGrid =  document.getElementById("product-grid2");
+      productGrid.innerHTML = ''; // تفريغ المحتوى الافتراضي
+  
+      products.forEach((product) => {
+  const productCard = `
+    <div class="product-card">
+      <img onclick="window.location.href='./products/sub_details.html?id=${product.id}';" src="${product.image}" alt="${product.title}">
+      <h3 onclick="window.location.href='./products/sub_details.html?id=${product.id}';">${product.title}</h3>
+      <div class="price-separator"></div>
+      <p>د.ع ${product.price.toLocaleString()}</p>
+      <button onclick='addToCart(${JSON.stringify(product)});'>إضافة إلى السلة</button>
+    </div>
+  `;
+  productGrid.innerHTML += productCard;
+});
+    } catch (error) {
+      console.error('Error fetching products:', error);
+    }
+  }
+  
+  
+  
+  
+  // استدعاء الدالة عند تحميل الصفحة
+  document.addEventListener('DOMContentLoaded', fetchProducts);
+  document.addEventListener('DOMContentLoaded', fetchProducts2);
+
+  // دالة لإضافة المنتج إلى السلة
+  function addToCart(product){
+    console.log(product)
+        const cartItem = {
+          id: product.id,
+          name: product.title,
+          price: product.price,
+          quantity: 1,
+          image: product.image,
+        };
+        // استرجاع السلة الحالية من localStorage
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.push(cartItem);
+    
+        // حفظ السلة
+        localStorage.setItem('cart', JSON.stringify(cart));
+    
+        alert('تمت إضافة المنتج إلى السلة!');
+      }
+    
+      // تحديث الكمية في السلة
+      function updateCartQuantity(productId, quantity) {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const product = cart.find((item) => item.id === productId);
+        if (product) {
+          product.quantity = quantity;
+          localStorage.setItem('cart', JSON.stringify(cart));
+        }
+      }
+      // إزالة المنتج من السلة
+      function removeFromCart(productId) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart = cart.filter((item) => item.id !== productId);
+        localStorage.setItem('cart', JSON.stringify(cart));
+      }
+    
+    </script>
+
+
+
+
+</html>

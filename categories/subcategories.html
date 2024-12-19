@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الأقسام</title>
+  <link rel="stylesheet" href="../css/style.css">
+    <!-- <link rel="stylesheet" href="../css/bottom_nav.css"> -->
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+/>
+  <style>
+
+    /* إعدادات عامة للصفحة */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* الحاوية الرئيسية */
+    .container {
+    
+      max-width: 600px; /* عرض الصفحة */
+      margin: 0 auto; /* توسيط المحتوى */
+      padding: 10px;
+      overflow-y: auto;
+      height: 100vh; /* لتمكين التمرير */
+    }
+
+    /* قائمة الأقسام */
+    .category-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 105px;
+
+    }
+
+    .category-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.category-list li:hover {
+  background-color: #f2f2f2;
+  transform: scale(1.01);
+}
+
+
+/* إعدادات الصورة */
+.category-list li img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: auto; /* دفع الصورة إلى أقصى اليمين */
+}
+/* النص */
+.category-list li span {
+  flex: 1;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  text-align: right;
+  margin-left: 15px; /* إضافة مسافة بين النص والسهم */
+}
+
+
+/* السهم */
+.category-list li .arrow {
+  color: #999;
+  font-size: 20px;
+  position: absolute;
+  left: 15px; /* وضع السهم في أقصى الطرف الأيسر */
+  top: 50%; /* محاذاة عمودية */
+  transform: translateY(-50%);
+}
+
+/* ================== الرأس ================== */
+.section-header {
+  position: fixed;
+  top: 40px; /* مباشرة أسفل الهيدر الثابت */
+  width: 100%;
+  background-color: #bbd0a0;
+  padding: 15px; /* حشوة داخلية للقسم */
+  font-size: 1rem; /* حجم النص */
+  font-weight: bold;
+  color: white;
+  z-index: 999;
+  border-bottom: 2px solid #ccc;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center; /* محاذاة النص والسهم عموديًا */
+  justify-content: space-between; /* توزيع العناصر أفقيًا */
+}
+
+/* السهم */
+.back-arrow {
+  color: white;
+  font-size: 1.2rem; /* حجم السهم */
+  text-decoration: none;
+  margin-right: 10px; 
+}
+
+.back-arrow:hover {
+  color: #333; /* تغيير اللون عند التمرير */
+}
+
+.back-arrow:hover {
+  color: #333; /* تغيير اللون عند التمرير */
+}
+
+
+/* النص */
+.section-header h2 {
+  margin: 0; /* إزالة الهوامش الافتراضية */
+  text-align: center;
+  flex-grow: 1; /* لجعل النص يحتل المساحة المتبقية بين السهمين */
+  font-size: 1.2rem;
+}
+
+
+    
+
+    /* استجابة للشاشات الصغيرة */
+    @media (max-width: 768px) {
+      .container {
+        padding: 5px;
+      }
+
+      /* .category-list li {
+        padding: 15px 20px;
+      } */
+
+      .category-list li img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .category-list li span {
+        font-size: 17px;
+      }
+
+      .category-list li .arrow {
+        font-size: 20px;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+ <!-- الهيدر الثابت -->
+ <header class="fixed-header">
+  <div class="header-content">
+    <div class="right-section">
+      <span class="header-text">تسديد</span>
+      <img src="../img/logo_wite-removebg-preview.png" alt="Logo" class="logo-icon">
+    </div>
+  </div>
+</header>
+
+<header class="section-header">
+  <a href="../index.html" class="back-arrow">
+    <i class="fas fa-arrow-right"></i>
+  </a>
+  <h2 style="color: #fff;">منتجات</h2>
+</header>
+
+
+<div class="container">
+  <ul class="category-list" id="subcategoryList"></ul>
+</div>
+
+
+<script>document.addEventListener("DOMContentLoaded", function () {
+  // Get the category ID from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const categoryId = urlParams.get("id");
+
+  if (categoryId) {
+    const apiUrl = `https://89.116.110.51:3000/aqs/api/v1/getSubCategoryByCategory/${categoryId}`;
+    const subcategoryList = document.getElementById("subcategoryList");
+
+    // Fetch subcategories data from API
+    fetch(apiUrl)
+      .then((response) => response.json())
+      .then((data) => {
+        data.forEach((subcategory) => {
+          // Create list item
+          const listItem = document.createElement("li");
+
+          // Add onclick to send subcategory ID to cook.html
+          listItem.onclick = () => {
+            window.location.href = `subdetailscategories.html?id=${subcategory.id}`;
+          };
+
+          // Add image
+          const img = document.createElement("img");
+          img.src = subcategory.image;
+          img.alt = subcategory.title;
+          listItem.appendChild(img);
+
+          // Add title
+          const title = document.createElement("span");
+          title.textContent = subcategory.title;
+          listItem.appendChild(title);
+
+          // Add arrow icon
+          const arrow = document.createElement("i");
+          arrow.classList.add("fas", "fa-chevron-left", "arrow");
+          listItem.appendChild(arrow);
+
+          // Append to list
+          subcategoryList.appendChild(listItem);
+        });
+      })
+      .catch((error) => console.error("Error fetching subcategories:", error));
+  } else {
+    console.error("Category ID not provided in the URL.");
+  }
+});
+
+
+</script>
+
+
+
+<script src="../js/script.js"></script>
+
+</body>

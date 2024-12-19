@@ -1,0 +1,197 @@
+#navbarContainer {
+  width: 95%;
+  max-width: 500px;
+  min-width: 300px;
+  height: 300px; /* الارتفاع الافتراضي كنسبة من ارتفاع الشاشة */
+  
+  border-radius: 20px;
+  border-bottom-left-radius: 0%;border-bottom-right-radius: 0px;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0px; /* النسبة المئوية لتحديد المسافة من أعلى الشاشة */
+  left: 50%; /* في منتصف الشاشة أفقيًا */
+  transform: translateX(-50%); /* لتوسيط العنصر أفقيًا */
+  z-index: 1000; /* فوق باقي المحتويات */
+}
+
+
+#navbar {
+  width: 100%;
+  height: 80px;
+  background-color: #264440;
+  position: absolute;
+  padding-bottom: -40px;
+}
+
+#bubbleWrapper {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  bottom: 25px;
+}
+
+.bubble {
+  background-color: #f5cb53;
+  width: 70px; /* زيادة حجم الفقاعة */
+  height: 70px; /* زيادة حجم الفقاعة */
+  border-radius: 50%;
+  z-index: 1;
+  //transform: translateY(190%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.icon {
+  color: #ffffff;
+  font-size: 4rem; /* حجم الأيقونة الافتراضي */
+}
+
+#bubble1 {
+  transform: translateY(0%);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+#bubble1 > span {
+  opacity: 0.7;
+}
+
+#bgWrapper {
+  filter: url(#goo);
+  width: 100%;
+  height: 21px;
+  position: absolute;
+  bottom: 60px;
+}
+
+#bg {
+  background-color: #ffffff;
+  width: 140%; /* زيادة العرض لتغطية المساحات */
+  height: 100%;
+  overflow:hidden;
+  margin-left: -20%; /* نفس القيمة المستخدمة لـ margin-right */
+  margin-right: -20%; /* نفس القيمة */
+}
+
+
+
+#bgBubble {
+  position: absolute;
+  background-color: #ffffff;
+  width: 70px;
+  height: 23px;
+  border-radius: 0%;
+  border-bottom-left-radius: 0%;border-bottom-right-radius: 0px;
+  bottom: -79px; 
+  left: 250px; 
+  transform: translateX(-50%);
+}
+
+
+/* #bgBubble {
+  position: absolute;
+  background-color: #ffffff;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  bottom: -50px;
+  left: 50px;
+  transform: translateX(-50%);
+} */
+
+#menuWrapper {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  margin-top:5px
+}
+
+.menuElement {
+  /* opacity: 0.4; */
+  transform: translateY(100%);
+  cursor: pointer;
+}
+/* .menuElement:hover {
+  opacity: 0.5;
+} */
+
+#contentWrapper {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#contentWrapper h2 {
+  color: #ffffff;
+  font-family: sans-serif;
+  font-weight: 400;
+}
+
+.content {
+  display: none;
+  opacity: 0;
+}
+
+
+
+/* Media Query: للأجهزة المتوسطة والصغيرة */
+@media (max-width: 768px) {
+  #navbarContainer {
+    width: 98%; /* عرض أكبر كنسبة مئوية */
+    max-width: 450px; /* زيادة الحد الأقصى للعرض */
+    min-width: 280px; /* زيادة الحد الأدنى للعرض */
+  }
+
+  .bubble {
+    width: 80px;
+    height: 80px;
+  }
+
+  .icon {
+    font-size: 4rem; /* تصغير الأيقونات */
+  }
+}
+
+/* Media Query: للأجهزة الصغيرة جدًا */
+@media (max-width: 480px) {
+  #navbarContainer {
+    width: 100%; /* عرض كامل للشاشة */
+    max-width: 420px; /* زيادة الحد الأقصى للعرض */
+    min-width: 260px; /* زيادة الحد الأدنى للعرض */
+  }
+
+  .bubble {
+    width: 40px; /* تقليل حجم الفقاعات */
+    height: 40px;
+  }
+
+  .icon {
+    font-size: 1.1rem; /* تقليل حجم الأيقونات */
+  }
+}
+
+/* Media Query: الأجهزة المتوسطة */
+@media (max-height: 800px) {
+  #navbarContainer {
+    height: 10vh; /* تقليل الارتفاع لأجهزة الشاشات الصغيرة */
+    min-height: 50px; /* تعديل الحد الأدنى */
+    max-height: 100px; /* تعديل الحد الأقصى */
+  }
+}
+
+/* Media Query: الأجهزة الصغيرة جدًا */
+@media (max-height: 600px) {
+  #navbarContainer {
+    height: 8vh; /* تقليل الارتفاع أكثر لأجهزة الشاشات الأصغر */
+    min-height: 40px; /* تعديل الحد الأدنى */
+    max-height: 80px; /* تعديل الحد الأقصى */
+  }
+}

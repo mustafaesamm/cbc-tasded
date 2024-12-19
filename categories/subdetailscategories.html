@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/all_products.css">
+    <!-- <link rel="stylesheet" href="../css/bottom_nav.css"> -->
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+/>
+  <title>منتجات</title>
+</head>
+<body>
+
+   <!-- الهيدر الثابت -->
+   <header class="fixed-header">
+    <div class="header-content">
+      <div class="right-section">
+        <span class="header-text">تسديد</span>
+        <img src="../img/logo_wite-removebg-preview.png" alt="Logo" class="logo-icon">
+      </div>
+    </div>
+  </header>
+
+  <header class="section-header">
+    <a href="../index.html" class="back-arrow">
+      <i class="fas fa-arrow-right"></i>
+    </a>
+    <h2>منتجات</h2>
+  </header>
+  
+  <section class="products">
+    <div class="product-grid" id="product-grid">
+      <!-- المنتجات ستُضاف ديناميكيًا هنا -->
+    </div>
+  </section>
+
+</body>
+
+<script>
+
+// جلب البيانات من API// الحصول على id من رابط الصفحة
+const urlParams = new URLSearchParams(window.location.search);
+const categoryId = urlParams.get('id'); // الحصول على قيمة id من الرابط
+
+// التحقق من وجود id
+if (categoryId) {
+  const apiURL = `https://89.116.110.51:3000/aqs/api/v1/getProductByCategory/${categoryId}`;
+
+  // جلب المنتجات بناءً على id القسم
+  fetch(apiURL)
+    .then((response) => response.json())
+    .then((data) => {
+      const productGrid = document.getElementById("product-grid");
+
+      // إنشاء بطاقات المنتجات بناءً على البيانات
+      data.forEach((product) => {
+        // إنشاء البطاقة
+        const productCard = document.createElement("div");
+        productCard.className = "product-card";
+        productCard.setAttribute(
+          "onclick",
+          "window.location.href='../products/sub_details.html';"
+        );
+
+        // محتوى البطاقة
+        productCard.innerHTML = `
+          <img src="${product.image}" alt="${product.title}">
+          <h3>${product.title}</h3>
+          <div class="price-separator"></div>
+          <p>د.ع ${product.price.toLocaleString()}</p>
+          <button>إضافة إلى السلة</button>
+        `;
+
+        // إضافة البطاقة إلى الشبكة
+        productGrid.appendChild(productCard);
+      });
+    })
+    .catch((error) => {
+      console.error("Error fetching the API:", error);
+    });
+} else {
+  console.error("Category ID not found in the URL.");
+}
+
+
+
+
+</script>
+
+<!-- شريط التنقل السفلي -->
+<div id="navbarContainer">
+  <div id="navbar">
+    <div id="bubbleWrapper">
+      <div id="bubble1" class="bubble" ><span class="icon"><i class="fas fa-th-large"></i></span></div>
+      <div id="bubble2" class="bubble" ><span class="icon"><i class="fas fa-shopping-cart"></i></span></div>
+      <div id="bubble3" class="bubble" ><span class="icon"><i class="fas fa-home"></i></span></div>
+      <div id="bubble4" class="bubble" ><span class="icon"><i class="fas fa-file-invoice-dollar"></i></span></div>
+      <div id="bubble5" class="bubble"><span class="icon"><i class="fas fa-user"></i></span></div> <!-- أيقونة جديدة -->
+    </div>
+    <div id="menuWrapper">
+      <div id="menu1" class="menuElement" onclick="navigateTo('./categories/categories.html')" onclick="move('1', '90%', '#ffffff')"><i class="fas fa-th-large" style="font-size: 1rem; color: white;"></i></div>
+      <div id="menu2" class="menuElement" onclick="navigateTo('shopping_cart.html')" onclick="move('2', '70%', '#ffffff')"><i class="fas fa-shopping-cart" style="font-size: 1rem; color: white;"></i></div>
+      <div id="menu3" class="menuElement" onclick="navigateTo('index.html')" onclick="move('3', '50%', '#ffffff')"><i class="fas fa-home" style="font-size: 1rem; color: white;"></i></div>
+      <div id="menu4" class="menuElement" onclick="navigateTo('invoices.html')" onclick="move('4', '30%', '#ffffff')"><i class="fas fa-file-invoice-dollar" style="font-size: 1rem; color: white;"></i></div>
+      <div id="menu5" class="menuElement" onclick="navigateTo('profile.html')" onclick="move('5', '10%', '#ffffff')"><i class="fas fa-user" style="font-size: 1rem; color: white;"></i></div> <!-- أيقونة جديدة -->
+    </div>    
+  </div>
+  <div id="bgWrapper">
+    <div id="bg"></div>
+    <div id="bgBubble"></div>
+  </div>
+</div>
+
+  <svg width="0" height="0" >
+    <defs>
+      <filter id="goo">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" id="blurFilter"/>
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -15" result="goo" />
+        <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+      </filter>
+    </defs>
+  </svg>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script><script  src="./js/script_nav.js"></script>
+
+  <script>
+    function navigateTo(page) {
+      window.location.href = page;
+    }
+  </script>
+
+</html>
