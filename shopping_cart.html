@@ -27,7 +27,7 @@
     margin: 0 auto; /* توسيط المحتوى */
     padding: 10px;
     overflow-y: auto;
-    height: 100vh; /* لتمكين التمرير */
+    height: 60px; /* لتمكين التمرير */
   }
     .cart-container {
 margin: 20px;
@@ -90,18 +90,13 @@ display: flex;
 
     }
     .total-section {
-position: fixed; /* جعل العنصر ثابتًا */
-bottom: 95px; /* تحديد موقعه أعلى navbarContainer */
-left: 0;
+position: relative; /* جعل العنصر ثابتًا */
 width: 100%;
 background-color: #f8f9fa;
-z-index: 5000; /* ضمان بقاء العنصر فوق العناصر الأخرى */
 display: block; /* يضمن التعامل مع `margin: auto` */
-margin: 0 auto; /* يجعل الزر في المنتصف أفقياً */
 justify-content: space-between;
 align-items: center;
-padding: 0px 20px;
-
+padding: 0px 10px 20px 0px;
 
 }
 .total-label {
