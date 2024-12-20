@@ -61,9 +61,10 @@
 
 /* إعدادات الصورة */
 .category-list li img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  object-position: center;
   margin-right: auto; /* دفع الصورة إلى أقصى اليمين */
 }
 /* النص */
@@ -179,7 +180,7 @@
   
 
     <!-- Product Image -->
-    <div class="slider-wrapper2" style="margin-top: 90px;" >
+    <div class="slider-wrapper2" style="margin-top: 150px;" >
       <div class="slider2" id="ad-slider2">
         <!-- سيتم إضافة الصور ديناميكيًا هنا -->
       </div>
@@ -279,6 +280,7 @@
     
           // إضافة الصور إلى السلايدر
           const slider = document.getElementById('ad-slider2');
+          
           product.images.forEach((imageUrl) => {
             const slide = document.createElement('div');
             slide.className = 'slide2';
@@ -397,12 +399,12 @@
 </script> -->
 
 
-  <script src="../js/script.js"></script>
+  <!-- <script src="../js/script.js"></script> -->
 
 
     <!-- Bootstrap JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/script.js"></script>
+    <!-- <script src="../js/script.js"></script> -->
 
     <div id="navbarContainer">
       <div id="navbar">
