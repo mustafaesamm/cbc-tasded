@@ -2,7 +2,7 @@
   width: 95%;
   max-width: 500px;
   min-width: 300px;
-  height: 300px; /* الارتفاع الافتراضي كنسبة من ارتفاع الشاشة */
+  height: 80px; /* الارتفاع الافتراضي كنسبة من ارتفاع الشاشة */
   
   border-radius: 20px;
   border-bottom-left-radius: 0%;border-bottom-right-radius: 0px;

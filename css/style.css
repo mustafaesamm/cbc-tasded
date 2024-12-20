@@ -227,6 +227,7 @@ background-color:white;
   width: 90%; /* تقليل عرض السلايدر */
   max-width: 500px; /* تحديد أقصى عرض */
   direction: rtl; /* عكس اتجاه السلايدر */
+  height: 300px;
 }
 
 .slider2::-webkit-scrollbar {
@@ -234,7 +235,7 @@ background-color:white;
 }
 
 .slide2 {
-  margin-top: 100px;
+  margin-top: 0px;
   flex: 0 0 auto;
   scroll-snap-align: center;
   width: 100%; /* عرض السلايدر بالكامل */
@@ -242,13 +243,15 @@ background-color:white;
   overflow: hidden;
   border-radius: 8px; /* إضافة حواف مستديرة للصورة */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* ظل خفيف للصورة */
+ 
 }
 
 .slide2 img {
 
-  width: 100%;
-  height: 100%;
-  /* object-fit: contain;  */
+  width: 350px;
+  height: 350px;
+  object-fit: cover;  
+  object-position:center
 }
 
 

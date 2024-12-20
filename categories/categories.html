@@ -14,14 +14,10 @@
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css'><link rel="stylesheet" href="../css/style_nav.css">
 
   <style>
-
-    /* إعدادات عامة للصفحة */
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 0;
-    }
+.container-all::-webkit-scrollbar{
+  display: none !important; /* For Chrome, Safari, and Edge */
+  }
+  
 
     /* الحاوية الرئيسية */
     .container {
@@ -29,7 +25,7 @@
       max-width: 600px; /* عرض الصفحة */
       margin: 0 auto; /* توسيط المحتوى */
       padding: 10px;
-      overflow-y: auto;
+      overflow-y: scroll;
       height: 100vh; /* لتمكين التمرير */
     }
 
@@ -37,7 +33,7 @@
     .category-list {
       list-style: none;
       padding: 0;
-      margin-top: 105px;
+      margin: 105px 0px 200px;
 
     }
 
@@ -126,9 +122,6 @@
   font-size: 1.2rem;
 }
 
-
-    
-
     /* استجابة للشاشات الصغيرة */
     @media (max-width: 768px) {
       .container {
@@ -170,13 +163,12 @@
 
 
 
-<div class="container">
+<div class="container container-all">
   <ul class="category-list" id="categoryList"></ul>
 </div>
 
   <script src="../js/script.js"></script>
 
-  
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const apiUrl = "https://89.116.110.51:3000/aqs/api/v1/getCategories";
@@ -220,53 +212,52 @@
 </body>
 
 
-<div id="navbarContainer">
-  <div id="navbar">
-    <div id="bubbleWrapper" style="margin-top:18px !important;">
-      <div id="bubble1" class="bubble"><span class="icon"><img width="25px" src="../img/parts.svg"></span></div>
-      <div id="bubble2" class="bubble" ><span class="icon" ><i   class="fas fa-shopping-cart"></i></span></div>
-      <div id="bubble3" class="bubble"><span class="icon"><i class="fas fa-home"></i></span><p class=""></p></div>
-      <div id="bubble4" class="bubble"><span class="icon"><img width="25px" src="../img/bars.svg"  ></span></div>
-      <div id="bubble5" class="bubble"><span class="icon"><img width="25px" src="../img/user-icon.svg"  ></span></div>
-    </div>
-    <div id="menuWrapper" style="margin-top:2px;">
-      <div id="menu1"  class="menuElement" onclick="move('1', '90%', '#ffffff')"><img onclick="navigateTo('../categories/categories.html')"  width="25px" src="../img/parts.svg" style="margin-top:2px !important;"></div>
-      <div id="menu2" class="menuElement" onclick="navigateTo('../shopping_cart.html')" onclick="move('2', '70%', '#ffffff')"><i   class="fas fa-shopping-cart" style="font-size: 1rem; color:white;margin-right:-9px;margin-top:9px !important;position: absolute;"></i></div>
-            
-      <div id="menu3" class="menuElement" onclick="navigateTo('../index.html')"  onclick="move('3', '50%', '#ffffff')"><i  class="fas fa-home" style="color: white;"></i></div>
-      <div id="menu4" onclick="navigateTo('../invoices.html')" style="margin-left:-16px;margin-top:-8px !important;" class="menuElement" onclick="move('4', '30%', '#ffffff')"><img  width="30px" src="../img/bars.svg"></div>
-      <div id="menu5" onclick="navigateTo('../profile.html')" class="menuElement" onclick="move('5', '10%', '#ffffff')"><img width="25px" src="../img/user-icon.svg"  ></div>
+ <!-- Bootstrap JavaScript -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="./js/script.js"></script>
 
-            <!-- <div id="menu1" class="menuElement" onclick="navigateTo('./categories/categories.html')"><i class="fas fa-th-large" style="font-size: 1rem; color: white;"></i></div>
-            <div id="menu2" class="menuElement" onclick="move('2', '70%', '#ffffff')"><i  width="25px" class="fas fa-shopping-cart" style="font-size: 1rem; color:white;margin-top:5;">
-            <div id="menu3" class="menuElement" onclick="move('3', '50%', '#ffffff')"><i width="25px" class="fas fa-home" style="font-size: 1rem; color: white;"></i></div>
-            <div id="menu4" class="menuElement" onclick="move('4', '30%', '#ffffff')"><img  width="25px" src="./img/bars.svg"></div>
-            <div id="menu5" class="menuElement" onclick="move('5', '10%', '#ffffff')"><img width="25px" src="./img/user-icon.svg"  ></div> -->
-    </div>
-    <div class="d-flex bg-red w-full" style="margin-bottom: 0px !important;margin-top: 62px;justify-content:space-around;color: white !important;font-size: 10px;">
-      <p>الاقسام</p> 
-      <p>السلة</p>
-      <p>الرئيسية</p>
-      <p>الفواتير</p>
-      <p>الحساب</p>
-    </div>
-  </div>
+ <div id="navbarContainer">
+   <div id="navbar">
+     <div id="bubbleWrapper" style="margin-top:18px !important;">
+       <div id="bubble1" class="bubble"><span class="icon"><img width="25px" src="../img/parts.svg"></span></div>
+       <div id="bubble2" class="bubble" ><span class="icon" ><i   class="fas fa-shopping-cart"></i></span></div>
+       <div id="bubble3" class="bubble"><span class="icon"><i class="fas fa-home"></i></span><p class=""></p></div>
+       <div id="bubble4" class="bubble"><span class="icon"><img width="25px" src="../img/bars.svg"  ></span></div>
+       <div id="bubble5" class="bubble"><span class="icon"><img width="25px" src="../img/user-icon.svg"  ></span></div>
+     </div>
+     <div id="menuWrapper" style="margin-top:2px;">
+       <div id="menu1"  class="menuElement" ><img onclick="navigateTo('../categories/categories.html')"  width="25px" src="../img/parts.svg" style="margin-top:2px !important;"></div>
+       <div id="menu2" class="menuElement" onclick="navigateTo('../shopping_cart.html')" ><i   class="fas fa-shopping-cart" style="font-size: 1rem; color:white;margin-right:-9px;margin-top:9px !important;position: absolute;"></i></div>
+             
+       <div id="menu3" class="menuElement" onclick="navigateTo('../index.html')"  ><i  class="fas fa-home" style="color: white;"></i></div>
+       <div id="menu4" onclick="navigateTo('../invoices.html')" style="margin-left:-16px;margin-top:-8px !important;" class="menuElement" ><img  width="30px" src="../img/bars.svg"></div>
+       <div id="menu5" onclick="navigateTo('../profile.html')" class="menuElement" ><img width="25px" src="../img/user-icon.svg"  ></div>
 
-  <div id="bgWrapper">
-    <div id="bg"></div>
-    <div id="bgBubble"></div>
-  </div>
-  
-</div>
+     </div>
+     <div class="d-flex bg-red w-full" style="margin-bottom: 0px !important;margin-top: 62px;justify-content:space-around;color: white !important;font-size: 10px;">
+       <p>الاقسام</p> 
+       <p>السلة</p>
+       <p>الرئيسية</p>
+       <p>الفواتير</p>
+       <p>الحساب</p>
+     </div>
+   </div>
 
-<svg width="0" height="0" >
-  <defs>
-    <filter id="goo">
-      <feGaussianBlur in="" stdDeviation="20" result="" id=""/>
-      <feColorMatrix  mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -10" result="" />
-    </filter>
-  </defs>
-</svg>
+   <div id="bgWrapper">
+     <div id="bg"></div>
+     <div id="bgBubble"></div>
+   </div>
+   
+ </div>
+
+ <svg width="0" height="0" >
+   <defs>
+     <filter id="goo">
+       <feGaussianBlur in="" stdDeviation="20" result="" id=""/>
+       <feColorMatrix  mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -10" result="" />
+     </filter>
+   </defs>
+ </svg>
 
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script><script  src="../js/categories.js"></script>
 

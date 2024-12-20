@@ -62,6 +62,7 @@ align-items: center;
 background-color: #f7f7f7;
 padding: 10px 20px;
 margin: 2px 0;
+width:250px;
 
 }
 
@@ -83,16 +84,15 @@ margin-left: 10px;
 display: flex;
 align-items: center;
 background-color: #2d4d41;
-padding: 10px 20px;
+padding: 10px;
 border-radius: 10px;
-width: 150px;
+width:fit-content;
 }
 
 .price-box .price {
 color: white;
 font-size: 12px;
 font-weight: bold;
-margin-right: 10px;
 }
 
 .price-box .currency {

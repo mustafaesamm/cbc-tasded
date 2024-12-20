@@ -34,20 +34,23 @@ margin: 20px;
 margin-bottom: 150px; /* زيادة المسافة أسفل المحتوى لضمان ظهور الكارت الأخير */
 }
 
-
-    .cart-item {
-background-color: #264440;
-color: white;
-border-radius: 10px;
-margin-bottom: 10px; /* تقليل المسافة بين الكروت */
-padding: 10px; /* تقليل الحشوة الداخلية */
-display: flex;
+.cartInfo{
+    display: flex;
 justify-content: space-between;
 align-items: center;
 width: 90%; /* تحديد عرض الكارت */
 margin-left: auto; /* توسيط الكارت */
 margin-right: auto; /* توسيط الكارت */
 font-size: 14px; /* تصغير النصوص داخل الكارت */
+}
+    .cart-item {
+background-color: #264440;
+color: white;
+border-radius: 10px;
+margin-bottom: 10px; /* تقليل المسافة بين الكروت */
+padding: 10px; /* تقليل الحشوة الداخلية */
+
+
 }
     .cart-item img {
         width: 70px;
@@ -68,20 +71,22 @@ font-size: 14px; /* تصغير النصوص داخل الكارت */
     .quantity-controls {
         display: flex;
         align-items: center;
+        justify-content: center;
+        width: 50%;
+        margin-right: 100px;
+        
     }
     .quantity-controls button {
-        background-color: white;
-        color: #0b3824;
+        background-color: transparent;
+        color: white;
         border: none;
         border-radius: 50%;
-        width: 30px;
-        height: 30px;
-        font-size: 14px;
+        font-size: 44px !important;
         cursor: pointer;
     }
     .quantity-controls span {
         margin: 0 10px;
-        font-size: 16px;
+        font-size: 20px;
     }
     .total-section {
 position: fixed; /* جعل العنصر ثابتًا */
@@ -186,12 +191,14 @@ const updateCart = () => {
 
     cart.forEach((item, index) => {
         const cartItem = document.createElement('div');
-        cartItem.className = 'cart-item';
         cartItem.innerHTML = `
+        <div class='cart-item'>
+        <div class='cartInfo'>
             <img src="${item.image}" alt="${item.name}" class="cart-image">
             <div class="cart-details">
                 <h3>${item.name}</h3>
                 <p>سعر المنتج: <span class="price">${item.price.toLocaleString()} د.ع</span></p>
+            </div>
             </div>
             <div class="quantity-controls">
                 <button class="decrease" data-index="${index}">-</button>
