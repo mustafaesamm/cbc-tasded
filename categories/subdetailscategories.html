@@ -194,14 +194,14 @@ font-size: 1.2rem;
        <div id="bubble5" class="bubble"><span class="icon"><img width="25px" src="../img/user-icon.svg"  ></span></div>
      </div>
      <div id="menuWrapper" style="margin-top:2px;">
-       <div id="menu1"  class="menuElement" ><img onclick="navigateTo('../categories/categories.html')"  width="25px" src="../img/parts.svg" style="margin-top:2px !important;"></div>
-       <div id="menu2" class="menuElement" onclick="navigateTo('../shopping_cart.html')" ><i   class="fas fa-shopping-cart" style="font-size: 1rem; color:white;margin-right:-9px;margin-top:9px !important;position: absolute;"></i></div>
-             
-       <div id="menu3" class="menuElement" onclick="navigateTo('../index.html')"  ><i  class="fas fa-home" style="color: white;"></i></div>
-       <div id="menu4" onclick="navigateTo('../invoices.html')" style="margin-left:-16px;margin-top:-8px !important;" class="menuElement" ><img  width="30px" src="../img/bars.svg"></div>
-       <div id="menu5" onclick="navigateTo('../profile.html')" class="menuElement" ><img width="25px" src="../img/user-icon.svg"  ></div>
+      <div id="menu1"  class="menuElement" ><img onclick="navigateTo('../categories/categories.html')"  width="25px" src="../img/parts.svg" style="margin-top:2px !important;"></div>
+      <div id="menu2" class="menuElement" onclick="navigateTo('../shopping_cart.html')" ><i   class="fas fa-shopping-cart" style="font-size: 1rem; color:white;margin-right:-2px;margin-top:6px !important;position: absolute;"></i></div>
 
-     </div>
+      <div id="menu3" class="menuElement" onclick="navigateTo('../index.html')"  ><i  class="fas fa-home" style="color: white;margin-top: 6px;margin-right: 15px;"></i></div>
+      <div id="menu4" onclick="navigateTo('../invoices.html')" style="margin-left:-8px;margin-top:-5px !important;" class="menuElement" ><img  width="30px" src="../img/bars.svg"></div>
+      <div id="menu5" onclick="navigateTo('../profile.html')" class="menuElement" ><img width="25px" src="../img/user-icon.svg"  ></div>
+
+    </div>
      <div class="d-flex bg-red w-full" style="margin-bottom: 0px !important;margin-top: 62px;justify-content:space-around;color: white !important;font-size: 10px;">
        <p>الاقسام</p> 
        <p>السلة</p>
@@ -230,6 +230,9 @@ font-size: 1.2rem;
   <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script><script  src="../js/categories.js"></script>
 
 <script>
+function truncateText(text) {
+  return text.length > 20 ? text.substring(0, 20) + "..." : text;
+}
 
 // جلب البيانات من API// الحصول على id من رابط الصفحة
 const urlParams = new URLSearchParams(window.location.search);
@@ -258,7 +261,7 @@ if (categoryId) {
         // محتوى البطاقة
         productCard.innerHTML = `
           <img src="${product.image}" alt="${product.title}">
-          <h3>${product.title}</h3>
+          <h3>${truncateText(product.title)}</h3>
           <div class="price-separator"></div>
           <p>د.ع ${product.price.toLocaleString()}</p>
           <button>إضافة إلى السلة</button>

@@ -36,11 +36,9 @@ margin-bottom: 150px; /* زيادة المسافة أسفل المحتوى لض�
 
 .cartInfo{
     display: flex;
-justify-content: space-between;
+    flex-direction: column;
 align-items: center;
-width: 90%; /* تحديد عرض الكارت */
 margin-left: auto; /* توسيط الكارت */
-margin-right: auto; /* توسيط الكارت */
 font-size: 14px; /* تصغير النصوص داخل الكارت */
 }
     .cart-item {
@@ -48,14 +46,15 @@ background-color: #264440;
 color: white;
 border-radius: 10px;
 margin-bottom: 10px; /* تقليل المسافة بين الكروت */
-padding: 10px; /* تقليل الحشوة الداخلية */
-
+padding: 10px 10px 0px 10px; /* تقليل الحشوة الداخلية */
+display: flex;
 
 }
     .cart-item img {
-        width: 70px;
-        height: 70px;
+        width: 120px;
+        height: 130px;
         border-radius: 5px;
+        object-fit: cover;
     }
     .cart-details {
         flex: 1;
@@ -64,17 +63,16 @@ padding: 10px; /* تقليل الحشوة الداخلية */
     .cart-details h3 {
         font-size: 14px;
         margin-bottom: 5px;
+        height: 40px;
+        width: 180px;
     }
     .cart-details .price {
         color: #f5cb53;
     }
     .quantity-controls {
         display: flex;
-        align-items: center;
         justify-content: center;
-        width: 50%;
-        margin-right: 100px;
-        
+
     }
     .quantity-controls button {
         background-color: transparent;
@@ -83,10 +81,13 @@ padding: 10px; /* تقليل الحشوة الداخلية */
         border-radius: 50%;
         font-size: 44px !important;
         cursor: pointer;
+        margin-top: -30px;
     }
     .quantity-controls span {
         margin: 0 10px;
         font-size: 20px;
+        margin-top: 1px;
+
     }
     .total-section {
 position: fixed; /* جعل العنصر ثابتًا */
@@ -193,18 +194,20 @@ const updateCart = () => {
         const cartItem = document.createElement('div');
         cartItem.innerHTML = `
         <div class='cart-item'>
-        <div class='cartInfo'>
             <img src="${item.image}" alt="${item.name}" class="cart-image">
+        <div class='cartInfo' >
             <div class="cart-details">
                 <h3>${item.name}</h3>
                 <p>سعر المنتج: <span class="price">${item.price.toLocaleString()} د.ع</span></p>
             </div>
-            </div>
-            <div class="quantity-controls">
+<div class="quantity-controls">
                 <button class="decrease" data-index="${index}">-</button>
                 <span class="quantity">${item.quantity}</span>
                 <button class="increase" data-index="${index}">+</button>
             </div>
+
+                        </div>
+            
         `;
 
         cartContainer.appendChild(cartItem);
@@ -261,13 +264,12 @@ updateCart();
         <div id="bubble5" class="bubble"><span class="icon"><img width="25px" src="./img/user-icon.svg"  ></span></div>
       </div>
       <div id="menuWrapper" style="margin-top:2px;">
-        <div id="menu1"  class="menuElement" ><img onclick="navigateTo('./categories/categories.html')"  width="25px" src="./img/parts.svg" style="margin-top:2px !important;"></div>
+        <div id="menu1"  class="menuElement" ><img onclick="navigateTo('./categories/categories.html')"  width="25px" src="./img/parts.svg" style="margin-top:2px !important;margin-right:-2px;"></div>
         <div id="menu2" class="menuElement" onclick="navigateTo('./shopping_cart.html')" ><i   class="fas fa-shopping-cart" style="font-size: 1rem; color:white;margin-right:-9px;margin-top:9px !important;position: absolute;"></i></div>
               
-        <div id="menu3" class="menuElement" onclick="navigateTo('./index.html')"  ><i  class="fas fa-home" style="color: white;"></i></div>
+        <div id="menu3" class="menuElement" onclick="navigateTo('./index.html')"  ><i  class="fas fa-home" style="color: white;margin-top: 8px;margin-right: 10px;"></i></div>
         <div id="menu4" onclick="navigateTo('./invoices.html')" style="margin-left:-16px;margin-top:-8px !important;" class="menuElement" ><img  width="30px" src="./img/bars.svg"></div>
         <div id="menu5" onclick="navigateTo('./profile.html')" class="menuElement" ><img width="25px" src="./img/user-icon.svg"  ></div>
-
               <!-- <div id="menu1" class="menuElement" onclick="navigateTo('./categories/categories.html')"><i class="fas fa-th-large" style="font-size: 1rem; color: white;"></i></div>
               <div id="menu2" class="menuElement" onclick="move('2', '70%', '#ffffff')"><i  width="25px" class="fas fa-shopping-cart" style="font-size: 1rem; color:white;margin-top:5;">
               <div id="menu3" class="menuElement" onclick="move('3', '50%', '#ffffff')"><i width="25px" class="fas fa-home" style="font-size: 1rem; color: white;"></i></div>

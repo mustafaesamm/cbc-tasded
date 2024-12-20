@@ -91,6 +91,8 @@
             text-align: center;
             font-size: 14px;
             color: #6f6f6f;
+            background-color: #264440;
+            width: 100%;
         }
 
         .signup-section a {
@@ -105,18 +107,17 @@
     </style>
 </head>
 <body>
-  <!-- الهيدر الثابت -->
-  <header class="fixed-header">
-    <div class="header-content">
-        <!-- <div class="left-section">
-            <span class="heart-icon">❤️</span>
-        </div> -->
-        <div class="right-section">
-            <span class="header-text">تسديد</span>
-            <img src="./img/logo_wite-removebg-preview.png" alt="Logo" class="logo-icon">
+    <header class="fixed-header" style="height: 80px !important;">
+        <div class="header-content " dir="ltr">
+            <div class="left-section">
+                <span class="heart-icon"><i class="fa-solid fa-heart" style="color: #F95454;margin-left:17px;font-size: 20px;"></i></span>
+            </div>
+            <div class="right-section" style="margin-top: 10px;">
+                <span class="header-text">تسديد</span>
+                <img src="./img/logo_wite-removebg-preview.png"  alt="Logo" class="logo-icon">
+            </div>
         </div>
-    </div>
-</header>
+    </header>
 
     <img src="./img/logo_wite-removebg-preview.png" alt="Logo" class="logo">
     <h1 class="title">تسديد</h1>
@@ -125,13 +126,11 @@
         <input type="text" placeholder="رقم الهاتف">
         <input type="password" placeholder="كلمة السر">
         <button class="login-button" onclick="window.location.href='index.html'">تسجيل دخول</button>
-
-        <p class="error-message">رقم الهاتف أو كلمة المرور غير صحيحة</p>
     </div>
 
-    <div class="signup-section">
+    <div class="signup-section" >
         <p>لا تمتلك حساب؟ <a href="#">قم بإنشاء حساب</a></p>
-        <p><a href="#">الاستمرار بدون تسجيل</a></p>
+        <p><a href="index.html">الاستمرار بدون تسجيل</a></p>
     </div>
 </body>
 </html>

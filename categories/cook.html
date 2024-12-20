@@ -1,45 +1,242 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/all_products.css">
-    <!-- <link rel="stylesheet" href="../css/bottom_nav.css"> -->
-    <link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-/>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/all_products.css">
+    <!-- إضافة Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
+    <script src="https://kit.fontawesome.com/000e70b561.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/style_nav.css">
+
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css'><link rel="stylesheet" href="../css/style_nav.css">
+
   <title>منتجات</title>
+  <style>
+
+    
+    /* الحاوية الرئيسية */
+    .container {
+    
+      max-width: 600px; /* عرض الصفحة */
+      margin: 0 auto; /* توسيط المحتوى */
+      padding: 10px;
+      overflow-y: auto;
+      height: 100vh; /* لتمكين التمرير */
+    }
+
+    /* قائمة الأقسام */
+    .category-list {
+      list-style: none;
+      padding: 0;
+      margin-top: 105px;
+
+    }
+
+    .category-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.category-list li:hover {
+  background-color: #f2f2f2;
+  transform: scale(1.01);
+}
+
+
+/* إعدادات الصورة */
+.category-list li img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: auto; /* دفع الصورة إلى أقصى اليمين */
+}
+/* النص */
+.category-list li span {
+  flex: 1;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333;
+  text-align: right;
+  margin-left: 15px; /* إضافة مسافة بين النص والسهم */
+}
+
+
+/* السهم */
+.category-list li .arrow {
+  color: #999;
+  font-size: 20px;
+  position: absolute;
+  left: 15px; /* وضع السهم في أقصى الطرف الأيسر */
+  top: 50%; /* محاذاة عمودية */
+  transform: translateY(-50%);
+}
+
+/* ================== الرأس ================== */
+.section-header {
+  position: fixed;
+  top: 40px; /* مباشرة أسفل الهيدر الثابت */
+  width: 100%;
+  background-color: #bbd0a0;
+  padding: 15px; /* حشوة داخلية للقسم */
+  font-size: 1rem; /* حجم النص */
+  font-weight: bold;
+  color: white;
+  z-index: 999;
+  border-bottom: 2px solid #ccc;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center; /* محاذاة النص والسهم عموديًا */
+  justify-content: space-between; /* توزيع العناصر أفقيًا */
+}
+
+/* السهم */
+.back-arrow {
+  color: white;
+  font-size: 1.2rem; /* حجم السهم */
+  text-decoration: none;
+  margin-right: 10px; 
+}
+
+.back-arrow:hover {
+  color: #333; /* تغيير اللون عند التمرير */
+}
+
+.back-arrow:hover {
+  color: #333; /* تغيير اللون عند التمرير */
+}
+
+
+/* النص */
+.section-header h2 {
+  margin: 0; /* إزالة الهوامش الافتراضية */
+  text-align: center;
+  flex-grow: 1; /* لجعل النص يحتل المساحة المتبقية بين السهمين */
+  font-size: 1.2rem;
+}
+
+
+    
+
+    /* استجابة للشاشات الصغيرة */
+    @media (max-width: 768px) {
+      .container {
+        padding: 5px;
+      }
+
+      /* .category-list li {
+        padding: 15px 20px;
+      } */
+
+      .category-list li img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .category-list li span {
+        font-size: 17px;
+      }
+
+      .category-list li .arrow {
+        font-size: 20px;
+      }
+    }
+  </style>
 </head>
 <body>
 
    <!-- الهيدر الثابت -->
-   <header class="fixed-header">
-    <div class="header-content">
-      <div class="right-section">
-        <span class="header-text">تسديد</span>
-        <img src="../img/logo_wite-removebg-preview.png" alt="Logo" class="logo-icon">
-      </div>
+   <header class="fixed-header" style="height: 80px !important;">
+    <div class="header-content " dir="ltr">
+        <div class="left-section">
+            <span class="heart-icon"><i class="fa-solid fa-heart" style="color: #F95454;margin-left:17px;font-size: 20px;"></i></span>
+        </div>
+        <div class="right-section" style="margin-top: 10px;">
+            <span class="header-text">تسديد</span>
+            <img src="../img/logo_wite-removebg-preview.png"  alt="Logo" class="logo-icon">
+        </div>
     </div>
   </header>
 
-  <header class="section-header">
+  <header class="section-header" style="margin-top: 38px;">
     <a href="../index.html" class="back-arrow">
       <i class="fas fa-arrow-right"></i>
     </a>
-    <h2>منتجات</h2>
+    <h2 style="color: #fff;">منتجات</h2>
   </header>
   
-  <section class="products">
+  <section class="products" style="margin-top: 180px;">
     <div class="product-grid" id="product-grid">
       <!-- المنتجات ستُضاف ديناميكيًا هنا -->
     </div>
   </section>
 
 </body>
+ <!-- Bootstrap JavaScript -->
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="../js/script.js"></script>
+
+ <div id="navbarContainer">
+   <div id="navbar">
+     <div id="bubbleWrapper" style="margin-top:18px !important;">
+       <div id="bubble1" class="bubble"><span class="icon"><img width="25px" src="../img/parts.svg"></span></div>
+       <div id="bubble2" class="bubble" ><span class="icon" ><i   class="fas fa-shopping-cart"></i></span></div>
+       <div id="bubble3" class="bubble"><span class="icon"><i class="fas fa-home"></i></span><p class=""></p></div>
+       <div id="bubble4" class="bubble"><span class="icon"><img width="25px" src="../img/bars.svg"  ></span></div>
+       <div id="bubble5" class="bubble"><span class="icon"><img width="25px" src="../img/user-icon.svg"  ></span></div>
+     </div>
+     <div id="menuWrapper" style="margin-top:2px;">
+      <div id="menu1"  class="menuElement" ><img onclick="navigateTo('../categories/categories.html')"  width="25px" src="../img/parts.svg" style="margin-top:2px !important;"></div>
+      <div id="menu2" class="menuElement" onclick="navigateTo('../shopping_cart.html')" ><i   class="fas fa-shopping-cart" style="font-size: 1rem; color:white;margin-right:-2px;margin-top:6px !important;position: absolute;"></i></div>
+
+      <div id="menu3" class="menuElement" onclick="navigateTo('../index.html')"  ><i  class="fas fa-home" style="color: white;margin-top: 6px;margin-right: 15px;"></i></div>
+      <div id="menu4" onclick="navigateTo('../invoices.html')" style="margin-left:-8px;margin-top:-5px !important;" class="menuElement" ><img  width="30px" src="../img/bars.svg"></div>
+      <div id="menu5" onclick="navigateTo('../profile.html')" class="menuElement" ><img width="25px" src="../img/user-icon.svg"  ></div>
+
+    </div>
+     <div class="d-flex bg-red w-full" style="margin-bottom: 0px !important;margin-top: 62px;justify-content:space-around;color: white !important;font-size: 10px;">
+       <p>الاقسام</p> 
+       <p>السلة</p>
+       <p>الرئيسية</p>
+       <p>الفواتير</p>
+       <p>الحساب</p>
+     </div>
+   </div>
+
+   <div id="bgWrapper">
+     <div id="bg"></div>
+     <div id="bgBubble"></div>
+   </div>
+   
+ </div>
+
+ <svg width="0" height="0" >
+   <defs>
+     <filter id="goo">
+       <feGaussianBlur in="" stdDeviation="20" result="" id=""/>
+       <feColorMatrix  mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -10" result="" />
+     </filter>
+   </defs>
+ </svg>
+
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.3/gsap.min.js'></script><script  src="../js/categories.js"></script>
 
 <script>
-
+function truncateText(text) {
+  return text.length > 20 ? text.substring(0, 20) + "..." : text;
+}
 // جلب البيانات من API// الحصول على id من رابط الصفحة
 const urlParams = new URLSearchParams(window.location.search);
 const categoryId = urlParams.get('id'); // الحصول على قيمة id من الرابط
@@ -67,7 +264,7 @@ if (categoryId) {
         // محتوى البطاقة
         productCard.innerHTML = `
           <img src="${product.image}" alt="${product.title}">
-          <h3>${product.title}</h3>
+          <h3>${truncateText(product.title)}</h3>
           <div class="price-separator"></div>
           <p>د.ع ${product.price.toLocaleString()}</p>
           <button>إضافة إلى السلة</button>
@@ -90,7 +287,11 @@ if (categoryId) {
 
 </script>
 
-<!-- شريط التنقل السفلي -->
 
 
+<script>
+  function navigateTo(page) {
+    window.location.href = page;
+  }
+</script>
 </html>
